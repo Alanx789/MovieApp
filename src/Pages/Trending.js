@@ -4,8 +4,8 @@ import { useFetchTrending } from '../Hooks/useFetchTrending'
 
 export const Trending = () => {
 
-  const [type, setType] = useState('')
-  const [timeLapse, setTimeLapse] = useState('')
+  const [type, setType] = useState('all')
+  const [timeLapse, setTimeLapse] = useState('day')
 
   const {movies} = useFetchTrending(type, timeLapse);
 
@@ -24,7 +24,7 @@ export const Trending = () => {
       <div className='select timeLapse'>
         <label>Choose a time lapse:</label>
 
-        <select name="time lapse">
+        <select name="time lapse"> 
           <option value={timeLapse} onChange={ setTimeLapse('day')  } >Day</option>
           <option value={timeLapse} onChange={ setTimeLapse('week') } >Week</option>
         </select>
